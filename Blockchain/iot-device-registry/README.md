@@ -279,15 +279,15 @@ The backend now exposes:
 - `/api/gateway/identity` to confirm the enrolled gateway wallet identity
 - `/api/compliance` for the technical-readiness profile
 
-## Hospital Device Simulation
+ on Hyperledger Fabric and stores the device record on-ledger.
+- A Fabric NFT-style identity asset is minted for the device.
+- Gateway endpoints are used to verify, revoke, activate, deactivate, and inspect device status.## Hospital Device Simulation
 
 This project uses a real software-based device simulation rather than physical hospital hardware.
 
 - Each simulated device is given its own real RSA public/private keypair in the frontend.
 - The simulated device signs its registration payload with its private key.
-- The backend registers that device on Hyperledger Fabric and stores the device record on-ledger.
-- A Fabric NFT-style identity asset is minted for the device.
-- Gateway endpoints are used to verify, revoke, activate, deactivate, and inspect device status.
+- The backend registers that device
 - The smoke test at `scripts/test-all-operations.js` simulates a full device lifecycle from registration to verification, revocation, hospital intake, audit-history retrieval, and cleanup.
 
 So the honest project claim is:
@@ -375,7 +375,7 @@ Expected result includes:
 Open a second terminal:
 
 ```bash
-cd /home/lol/Blockchain-main/Blockchain/iot-device-registry/frontend
+cd Blockchain-main/Blockchain/iot-device-registry/frontend
 node node_modules/react-scripts/bin/react-scripts.js start
 ```
 
