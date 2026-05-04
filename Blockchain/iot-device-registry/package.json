@@ -1,0 +1,39 @@
+{
+  "name": "iot-device-registry",
+  "version": "1.0.0",
+  "description": "IoT Device Registry with Hyperledger Fabric",
+  "main": "api/server.js",
+  "scripts": {
+    "start": "./start-server.sh",
+    "dev": "./scripts/run-node.sh node_modules/nodemon/bin/nodemon.js api/server.js",
+    "start:fabric": "./scripts/start-fabric-stack.sh",
+    "reset:fabric": "./scripts/reset-fabric-network.sh",
+    "test": "./scripts/run-node.sh scripts/test-all-operations.js",
+    "deploy:fabric": "./scripts/deploy-fabric.sh",
+    "package": "docker run --rm -v $(pwd):/workspace hyperledger/fabric-peer:2.5 peer lifecycle chaincode package /workspace/deviceContract.tar.gz --path /workspace/chaincode/deviceContract --lang node --label deviceContract_1"
+  },
+  "keywords": [
+    "iot",
+    "hyperledger",
+    "fabric",
+    "blockchain",
+    "device-registry"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "fabric-network": "^2.2.19",
+    "fabric-ca-client": "^2.2.19",
+    "crypto": "^1.0.1",
+    "axios": "^1.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

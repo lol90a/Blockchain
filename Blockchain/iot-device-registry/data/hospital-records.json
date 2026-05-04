@@ -1,0 +1,187 @@
+[
+  {
+    "id": "ad1a0fa0-0059-4f6f-9b66-9ad527ea5ae6",
+    "deviceId": "smoke-1777908907867",
+    "patientId": "anon-smoke-1777908907867",
+    "observations": {
+      "heartRate": 78,
+      "oxygenSaturation": 98
+    },
+    "classification": "clinical",
+    "sourceSystem": "smoke-test-hospital",
+    "submittedAt": "2026-05-04T15:35:16.132Z",
+    "compliance": {
+      "consentObtained": true,
+      "retentionDays": 365,
+      "retainUntil": "2027-05-04T15:35:16.132Z"
+    },
+    "verification": {
+      "deviceId": "smoke-1777908907867",
+      "status": "active",
+      "verified": true,
+      "hasNFTIdentity": true,
+      "lastOperation": "mint-nft"
+    },
+    "storageReceipt": {
+      "provider": "local-archive",
+      "cid": "533f115d0f8e751c822911bcb07d0f373d4f1c0536d40d8d56a3b343f4d02e7d",
+      "uri": "local-archive://533f115d0f8e751c822911bcb07d0f373d4f1c0536d40d8d56a3b343f4d02e7d",
+      "pinned": false,
+      "name": "smoke-1777908907867-1777908916117",
+      "path": "/home/lol/Blockchain-main/Blockchain/iot-device-registry/data/ipfs-archive/533f115d0f8e751c822911bcb07d0f373d4f1c0536d40d8d56a3b343f4d02e7d.json"
+    },
+    "forwardingReceipt": {
+      "forwarded": false,
+      "mode": "local-only",
+      "target": null
+    }
+  },
+  {
+    "id": "052b0f0c-4919-410e-ab4e-f95174508a50",
+    "deviceId": "smoke-1777910328147",
+    "patientId": "anon-smoke-1777910328147",
+    "observations": {
+      "heartRate": 78,
+      "oxygenSaturation": 98
+    },
+    "classification": "clinical",
+    "sourceSystem": "smoke-test-hospital",
+    "submittedAt": "2026-05-04T15:58:57.193Z",
+    "compliance": {
+      "consentObtained": true,
+      "retentionDays": 365,
+      "retainUntil": "2027-05-04T15:58:57.193Z"
+    },
+    "verification": {
+      "deviceId": "smoke-1777910328147",
+      "status": "active",
+      "verified": true,
+      "hasNFTIdentity": true,
+      "lastOperation": "mint-nft"
+    },
+    "storageReceipt": {
+      "provider": "local-archive",
+      "cid": "200737139ab59fced770fa3c5e2edffdb1d1888e77266031c0889f3a50e30265",
+      "uri": "local-archive://200737139ab59fced770fa3c5e2edffdb1d1888e77266031c0889f3a50e30265",
+      "pinned": false,
+      "name": "smoke-1777910328147-1777910337192",
+      "path": "/home/lol/Blockchain-main/Blockchain/iot-device-registry/data/ipfs-archive/200737139ab59fced770fa3c5e2edffdb1d1888e77266031c0889f3a50e30265.json"
+    },
+    "forwardingReceipt": {
+      "forwarded": false,
+      "mode": "local-only",
+      "target": null
+    }
+  },
+  {
+    "id": "1331a6c4-32c0-4f5c-b399-19c8c46f8af8",
+    "deviceId": "smoke-1777911140419",
+    "patientId": "anon-smoke-1777911140419",
+    "observations": {
+      "heartRate": 78,
+      "oxygenSaturation": 98
+    },
+    "classification": "clinical",
+    "sourceSystem": "smoke-test-hospital",
+    "submittedAt": "2026-05-04T16:12:28.622Z",
+    "compliance": {
+      "consentObtained": true,
+      "retentionDays": 365,
+      "retainUntil": "2027-05-04T16:12:28.622Z"
+    },
+    "verification": {
+      "deviceId": "smoke-1777911140419",
+      "status": "active",
+      "verified": true,
+      "hasNFTIdentity": true,
+      "lastOperation": "mint-nft"
+    },
+    "storageReceipt": {
+      "provider": "local-archive",
+      "cid": "0c6da099f78ca2fbd95175c82788c70eab5bfe7a17eae4c5de87393dbc75bc95",
+      "uri": "local-archive://0c6da099f78ca2fbd95175c82788c70eab5bfe7a17eae4c5de87393dbc75bc95",
+      "pinned": false,
+      "name": "smoke-1777911140419-1777911148620",
+      "path": "/home/lol/Blockchain-main/Blockchain/iot-device-registry/data/ipfs-archive/0c6da099f78ca2fbd95175c82788c70eab5bfe7a17eae4c5de87393dbc75bc95.json"
+    },
+    "forwardingReceipt": {
+      "forwarded": false,
+      "mode": "local-only",
+      "target": null
+    }
+  },
+  {
+    "id": "a26ee180-4c59-419e-a812-3056a35fbf24",
+    "deviceId": "smoke-1777911223861",
+    "patientId": "anon-smoke-1777911223861",
+    "observations": {
+      "heartRate": 78,
+      "oxygenSaturation": 98
+    },
+    "classification": "clinical",
+    "sourceSystem": "smoke-test-hospital",
+    "submittedAt": "2026-05-04T16:13:53.352Z",
+    "compliance": {
+      "consentObtained": true,
+      "retentionDays": 365,
+      "retainUntil": "2027-05-04T16:13:53.352Z"
+    },
+    "verification": {
+      "deviceId": "smoke-1777911223861",
+      "status": "active",
+      "verified": true,
+      "hasNFTIdentity": true,
+      "lastOperation": "mint-nft"
+    },
+    "storageReceipt": {
+      "provider": "local-archive",
+      "cid": "dd99cc20a2baa098a3b77a471185eea32a3e31c4210f3517345784c59a1760c8",
+      "uri": "local-archive://dd99cc20a2baa098a3b77a471185eea32a3e31c4210f3517345784c59a1760c8",
+      "pinned": false,
+      "name": "smoke-1777911223861-1777911233351",
+      "path": "/home/lol/Blockchain-main/Blockchain/iot-device-registry/data/ipfs-archive/dd99cc20a2baa098a3b77a471185eea32a3e31c4210f3517345784c59a1760c8.json"
+    },
+    "forwardingReceipt": {
+      "forwarded": false,
+      "mode": "local-only",
+      "target": null
+    }
+  },
+  {
+    "id": "86e1a29a-3a10-4ba2-856b-620c1693a842",
+    "deviceId": "smoke-1777911308297",
+    "patientId": "anon-smoke-1777911308297",
+    "observations": {
+      "heartRate": 78,
+      "oxygenSaturation": 98
+    },
+    "classification": "clinical",
+    "sourceSystem": "smoke-test-hospital",
+    "submittedAt": "2026-05-04T16:15:15.452Z",
+    "compliance": {
+      "consentObtained": true,
+      "retentionDays": 365,
+      "retainUntil": "2027-05-04T16:15:15.452Z"
+    },
+    "verification": {
+      "deviceId": "smoke-1777911308297",
+      "status": "active",
+      "verified": true,
+      "hasNFTIdentity": true,
+      "lastOperation": "mint-nft"
+    },
+    "storageReceipt": {
+      "provider": "local-archive",
+      "cid": "27b5f461303f6bfc0d920aca148663ea37f2680fe29be25bccedf13cfd872d0b",
+      "uri": "local-archive://27b5f461303f6bfc0d920aca148663ea37f2680fe29be25bccedf13cfd872d0b",
+      "pinned": false,
+      "name": "smoke-1777911308297-1777911315451",
+      "path": "/home/lol/Blockchain-main/Blockchain/iot-device-registry/data/ipfs-archive/27b5f461303f6bfc0d920aca148663ea37f2680fe29be25bccedf13cfd872d0b.json"
+    },
+    "forwardingReceipt": {
+      "forwarded": false,
+      "mode": "local-only",
+      "target": null
+    }
+  }
+]

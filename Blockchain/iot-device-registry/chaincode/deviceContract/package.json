@@ -1,0 +1,31 @@
+{
+  "name": "device-contract",
+  "version": "1.0.0",
+  "description": "IoT Device Registry Smart Contract for Hyperledger Fabric",
+  "main": "index.js",
+  "scripts": {
+    "start": "fabric-chaincode-node start",
+    "start:server-nontls": "fabric-chaincode-node server --chaincode-address=$CHAINCODE_SERVER_ADDRESS --chaincode-id=$CHAINCODE_ID",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hyperledger",
+    "fabric",
+    "chaincode",
+    "iot",
+    "device-registry"
+  ],
+  "author": "IoT Device Registry Team",
+  "license": "MIT",
+  "dependencies": {
+    "fabric-contract-api": "~2.2.0",
+    "fabric-shim": "~2.2.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hyperledger/fabric-samples.git"
+  }
+} 

@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "password": "5d215024c5bf56c8e11c25dd4b84a3b2:ed0ba53086cd4e9aade82da138f8b1b66cd48bde1820acebdfd92ff30eaabc3091419dfce47d9b9322a012bea6d28c351171d6b0e31bdeb673e4d3199287bbd5",
+    "email": "admin@iotregistry.com",
+    "firstName": "Fabric",
+    "lastName": "Administrator",
+    "role": "admin",
+    "createdAt": "2026-04-16T23:24:57.413Z",
+    "isActive": true,
+    "lastLogin": null,
+    "fabricIdentityLabel": "admin"
+  },
+  {
+    "id": 2,
+    "username": "aliadel24",
+    "password": "2c0d0ba7091807b2b1c32459cf5bb7da:20ee1f5cfd0e4b690c543e3b7ab79f1c4776ce87143fac0ef50cfda068fcd22992206ce6d6577049a9a937757b44886bb0c65fc82a4d12ff5a0890ff46dc51e8",
+    "email": "ali@test.com",
+    "firstName": "ali",
+    "lastName": "ali",
+    "role": "user",
+    "createdAt": "2026-05-04T15:45:10.742Z",
+    "isActive": true,
+    "lastLogin": null
+  }
+]

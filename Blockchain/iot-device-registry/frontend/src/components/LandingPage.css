@@ -1,0 +1,65 @@
+.landing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.landing-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.landing-header,
+.welcome-section {
+  text-align: center;
+}
+
+.landing-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.auth-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.auth-option {
+  background: #f8f9fa;
+  border: 2px solid #e1e5e9;
+  border-radius: 15px;
+  padding: 24px;
+  text-align: center;
+}
+
+.auth-icon {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.user-btn {
+  background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+}
+
+.admin-btn {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+}

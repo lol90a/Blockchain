@@ -1,0 +1,17 @@
+{
+    "name": "device-contract",
+    "version": "1.0.0",
+    "description": "IoT Device Smart Contract",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js",
+      "package": "docker run --rm -v $(pwd):/workspace hyperledger/fabric-peer:2.5 peer lifecycle chaincode package /workspace/deviceContract.tar.gz --path /workspace/chaincode/deviceContract --lang node --label deviceContract_1"
+    },
+    "engines": {
+      "node": ">=14"
+    },
+    "dependencies": {
+      "fabric-contract-api": "^2.2.0"
+    }
+  }
+  

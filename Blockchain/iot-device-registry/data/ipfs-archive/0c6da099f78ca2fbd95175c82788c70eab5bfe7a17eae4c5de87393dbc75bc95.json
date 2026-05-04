@@ -1,0 +1,34 @@
+{
+  "deviceId": "smoke-1777911140419",
+  "submittedAt": "2026-05-04T16:12:28.619Z",
+  "patientId": "anon-smoke-1777911140419",
+  "classification": "clinical",
+  "sourceSystem": "smoke-test-hospital",
+  "observations": {
+    "heartRate": 78,
+    "oxygenSaturation": 98
+  },
+  "verification": {
+    "deviceId": "smoke-1777911140419",
+    "status": "active",
+    "verified": true,
+    "hasNFTIdentity": true,
+    "lastOperation": "mint-nft"
+  },
+  "deviceStatus": {
+    "deviceId": "smoke-1777911140419",
+    "status": "active",
+    "isActive": true,
+    "lastModified": "2026-05-04T16:12:20.000Z",
+    "ledgerProof": {
+      "lastOperation": "mint-nft",
+      "registrationBlockNumber": null,
+      "registrationTimestamp": "2026-05-04T16:12:20.000Z",
+      "registrationTxId": "27eaa5aa5b074b095b394774d891e1ece8973fd6ab3c254f6561cd07bc481f90",
+      "nftMintTxId": "0770e1f4cd260a77f3851d250bb89766bd75799ba623988c52cf3b5a0edae047",
+      "nftMintTimestamp": null,
+      "nftMintBlockNumber": "7"
+    },
+    "revocation": null
+  }
+}
