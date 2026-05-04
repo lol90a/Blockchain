@@ -120,42 +120,20 @@ Blockchain/fabric-samples/test-network
 - Fabric peer org2: `9051`
 - orderer: `7050`
 
-## Environment
-
-Current backend configuration:
-
-```env
-PORT=5000
-AES_SECRET=5cfd3f098503ead938643de65060019d1dfc1dd7bc00dc5dd7dafb2b11f8b84f
-CONNECTION_PROFILE_PATH=../fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/connection-org1.json
-CHANNEL_NAME=mychannel
-CHAINCODE_NAME=devicecontract
-FABRIC_MOCK_MODE=false
-FABRIC_ALLOW_FALLBACK=false
-```
-
-Important:
-
-- `FABRIC_MOCK_MODE=false` is kept only to force Fabric-only runtime
-- `FABRIC_ALLOW_FALLBACK=false` ensures the backend fails instead of silently switching away from Fabric
-- `FABRIC_STATE_DB=couchdb` enables CouchDB-backed world state on startup
-- `ADMIN_REQUIRE_FABRIC_IDENTITY=true` ties admin access to the enrolled Fabric wallet identity
-- `IPFS_API_URL` is optional; if omitted, audit bundles are archived locally instead of being pinned to IPFS
-- `HOSPITAL_EMR_ENDPOINT` is optional; if omitted, hospital submissions remain in the local integration store
 
 ## Install Dependencies
 
 Backend:
 
 ```bash
-cd /home/lol/Blockchain-main/Blockchain/iot-device-registry
+cd Blockchain-main/Blockchain/iot-device-registry
 npm install
 ```
 
 Frontend:
 
 ```bash
-cd /home/lol/Blockchain-main/Blockchain/iot-device-registry/frontend
+cd Blockchain-main/Blockchain/iot-device-registry/frontend
 npm install
 ```
 
@@ -207,7 +185,7 @@ Create the channel:
 Go back to the project:
 
 ```bash
-cd /home/lol/Blockchain-main/Blockchain/iot-device-registry
+cd Blockchain-main/Blockchain/iot-device-registry
 ```
 
 Refresh the admin and application identities:
@@ -230,7 +208,7 @@ wallet/gatewayUser.id
 Go back to the Fabric test-network directory:
 
 ```bash
-cd /home/lol/Blockchain-main/Blockchain/fabric-samples/test-network
+cd Blockchain-main/Blockchain/fabric-samples/test-network
 ```
 
 Deploy the chaincode as chaincode-as-a-service:
@@ -244,7 +222,7 @@ If you have already deployed an older version, increase the version number, for 
 You can also use:
 
 ```bash
-cd /home/lol/Blockchain-main/Blockchain/iot-device-registry
+cd Blockchain-main/Blockchain/iot-device-registry
 ./scripts/deploy-fabric.sh 1.5
 ```
 
@@ -265,7 +243,7 @@ docker ps --format '{{.Names}}\t{{.Status}}' | grep devicecontract
 From the project directory:
 
 ```bash
-cd /home/lol/Blockchain-main/Blockchain/iot-device-registry
+cd Blockchain-main/Blockchain/iot-device-registry
 ./scripts/start-fabric-stack.sh
 ./start-server.sh
 ```
@@ -310,7 +288,7 @@ then the backend has been updated but the Fabric chaincode running on your netwo
 Redeploy the chaincode with the newer version and restart the backend:
 
 ```bash
-cd /home/lol/Blockchain-main/Blockchain/iot-device-registry
+cd Blockchain-main/Blockchain/iot-device-registry
 ./scripts/deploy-fabric.sh 1.5
 ./start-server.sh
 ```
@@ -318,7 +296,7 @@ cd /home/lol/Blockchain-main/Blockchain/iot-device-registry
 If Fabric is in a messy state, do a clean restart:
 
 ```bash
-cd /home/lol/Blockchain-main/Blockchain/iot-device-registry
+cd Blockchain-main/Blockchain/iot-device-registry
 ./scripts/reset-fabric-network.sh
 ./scripts/start-fabric-stack.sh 1.5
 ./start-server.sh
@@ -332,16 +310,7 @@ To pin hospital/device audit bundles to a real IPFS node, set:
 IPFS_API_URL=http://127.0.0.1:5001
 ```
 
-If `IPFS_API_URL` is empty, the project still stores audit bundles in a local content-addressed archive under `data/ipfs-archive`.
 
-To forward accepted hospital submissions to an external EMR or hospital endpoint, set:
-
-```env
-HOSPITAL_EMR_ENDPOINT=https://your-emr.example/api/intake
-HOSPITAL_EMR_API_KEY=your-token-if-needed
-```
-
-If `HOSPITAL_EMR_ENDPOINT` is empty, the project still stores validated submissions locally and marks them as `local-only`.
 
 ## Compliance Readiness
 
