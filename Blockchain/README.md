@@ -84,7 +84,7 @@ That document contains:
 From the project directory:
 
 ```bash
-cd /home/lol/Blockchain-main/Blockchain/iot-device-registry
+cd Blockchain-main/Blockchain/iot-device-registry
 ./scripts/reset-fabric-network.sh   # optional clean restart
 ./scripts/start-fabric-stack.sh
 ./start-server.sh
@@ -93,7 +93,7 @@ cd /home/lol/Blockchain-main/Blockchain/iot-device-registry
 Then in another terminal:
 
 ```bash
-cd /home/lol/Blockchain-main/Blockchain/iot-device-registry/frontend
+cd Blockchain-main/Blockchain/iot-device-registry/frontend
 npm start
 ```
 
@@ -102,7 +102,7 @@ npm start
 From the project directory:
 
 ```bash
-cd /home/lol/Blockchain-main/Blockchain/iot-device-registry
+cd Blockchain-main/Blockchain/iot-device-registry
 node scripts/test-all-operations.js
 ```
 
