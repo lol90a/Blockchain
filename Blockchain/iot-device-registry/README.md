@@ -6,6 +6,7 @@ This project is a full-stack IoT device registry with:
 - a Node.js/Express backend
 - a Hyperledger Fabric network
 - a Fabric-minted device NFT flow
+- a simulated IoMT healthcare extension for an ESP32 + AD8232 ECG prototype
 
 The backend stores device records on Fabric and mints a separate on-ledger NFT asset for each registered device. The NFT is minted on Hyperledger Fabric, not on Ethereum or Polygon.
 
@@ -256,17 +257,62 @@ The backend now exposes:
 - `/api/admin/fabric-status` to confirm the enrolled admin wallet identity
 - `/api/gateway/identity` to confirm the enrolled gateway wallet identity
 - `/api/compliance` for the technical-readiness profile
+- `/api/devices/:deviceId/telemetry` to log a simulated healthcare telemetry event on Fabric
+- `/api/iomt/ecg/profile` to generate a simulated AD8232 + ESP32 device profile
+- `/api/iomt/ecg/waveform` to generate ECG-like waveform telemetry
+- `/api/iomt/ecg/intake-payload` to generate a hospital-ready clinical payload
+- `/api/iomt/ecg/demo-bundle` to generate the complete demo registration and telemetry bundle
 
- on Hyperledger Fabric and stores the device record on-ledger.
-- A Fabric NFT-style identity asset is minted for the device.
-- Gateway endpoints are used to verify, revoke, activate, deactivate, and inspect device status.## Hospital Device Simulation
+Device registration remains Fabric-backed:
+
+- the device record is written on-ledger
+- a Fabric NFT-style identity asset is minted for the device
+- gateway endpoints are used to verify, revoke, activate, deactivate, and inspect device status
+
+## Hospital Device Simulation
 
 This project uses a real software-based device simulation rather than physical hospital hardware.
 
 - Each simulated device is given its own real RSA public/private keypair in the frontend.
 - The simulated device signs its registration payload with its private key.
-- The backend registers that device
+- The backend registers that device.
 - The smoke test at `scripts/test-all-operations.js` simulates a full device lifecycle from registration to verification, revocation, hospital intake, audit-history retrieval, and cleanup.
+
+## IoMT ECG Prototype Simulation
+
+To align the project with a smart healthcare use case, the repository now includes a simulated IoMT ECG prototype that models:
+
+- an `AD8232` ECG sensor as the biometric signal source
+- an `ESP32` microcontroller as the edge healthcare node
+- blockchain-backed registration, authentication, and event logging through the existing DASHCare-style Fabric flow
+
+The ECG simulator generates:
+
+- a signed device-registration payload for an `iomt-ecg-monitor`
+- synthetic ECG waveform preview samples with a deterministic signal hash
+- a hospital intake payload containing pseudonymized patient data and ECG observations
+
+You can inspect the generated simulation artifacts without writing to the blockchain:
+
+```bash
+curl "http://localhost:5000/api/iomt/ecg/demo-bundle"
+```
+
+Or run the end-to-end healthcare demo after the backend and Fabric network are up:
+
+```bash
+cd /home/lol/Blockchain-main/Blockchain/iot-device-registry
+npm run demo:ecg
+```
+
+The ECG demo performs this workflow:
+
+- creates a simulated ESP32 + AD8232 device identity
+- registers the device on Hyperledger Fabric
+- verifies the device through the gateway layer
+- writes an ECG telemetry event to the Fabric ledger
+- submits ECG observations to the hospital intake route
+- retrieves Fabric-backed history and NFT metadata for auditability
 
 So the honest project claim is:
 

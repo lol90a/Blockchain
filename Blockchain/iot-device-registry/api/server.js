@@ -20,6 +20,7 @@ app.use('/api/test', require('./routes/testRoutes'));
 app.use('/api/admin', require('./routes/adminRoutes'));
 app.use('/api/users', require('./routes/userRoutes').router);
 app.use('/api/hospital', require('./routes/hospitalRoutes'));
+app.use('/api/iomt', require('./routes/iomtRoutes'));
 app.get('/api/compliance', (req, res) => res.json(getComplianceProfile()));
 
 // Health check endpoint

@@ -191,6 +191,37 @@ class DeviceContract extends Contract {
     return JSON.stringify(device);
   }
 
+  async recordDeviceTelemetry(ctx, deviceId, telemetryJson, submittedBy) {
+    telemetryJson = telemetryJson ?? '';
+    submittedBy = submittedBy ?? '';
+
+    const device = await this._getParsedDevice(ctx, deviceId);
+    const timestamp = new Date(ctx.stub.getTxTimestamp().seconds.low * 1000).toISOString();
+    const txId = ctx.stub.getTxID();
+    const telemetry = telemetryJson ? JSON.parse(telemetryJson) : {};
+    const telemetryEvent = {
+      txId,
+      recordedAt: timestamp,
+      submittedBy: submittedBy || device.registeredBy || device.deviceId,
+      observationType: telemetry.modality || telemetry.observationType || 'telemetry',
+      signalHash: telemetry.summary?.signalHash || telemetry.signalHash || null,
+      summary: telemetry.summary || telemetry
+    };
+
+    device.latestTelemetry = telemetryEvent;
+    device.ledgerProof = {
+      ...(device.ledgerProof || {}),
+      lastTelemetryTxId: txId,
+      lastTelemetryBlockNumber: null,
+      lastTelemetryTimestamp: timestamp,
+      lastOperation: 'telemetry'
+    };
+    device.telemetryLog = [...(device.telemetryLog || []), telemetryEvent].slice(-20);
+
+    await ctx.stub.putState(deviceId, Buffer.from(JSON.stringify(device)));
+    return JSON.stringify(device);
+  }
+
   async removeDevice(ctx, deviceId) {
     await this._getParsedDevice(ctx, deviceId);
     await ctx.stub.deleteState(deviceId);

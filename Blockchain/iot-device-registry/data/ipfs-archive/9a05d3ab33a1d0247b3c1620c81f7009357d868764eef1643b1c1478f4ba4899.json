@@ -1,0 +1,374 @@
+{
+  "deviceId": "ecg-esp32-1778515915124",
+  "submittedAt": "2026-05-11T16:12:07.574Z",
+  "patientId": "anon-patient-ecg-esp32-1778515915124",
+  "classification": "cardiac-monitoring",
+  "sourceSystem": "esp32-ad8232-edge-simulator",
+  "observations": {
+    "modality": "ecg",
+    "deviceType": "iomt-ecg-monitor",
+    "deviceModel": "ESP32-AD8232-SIM",
+    "biosensor": "AD8232",
+    "controller": "ESP32",
+    "leadConfiguration": "Lead-I",
+    "recordedAt": "2026-05-11T16:11:55.261Z",
+    "summary": {
+      "rhythm": "normal-sinus-rhythm-pattern",
+      "heartRateBpm": 78,
+      "sampleRateHz": 250,
+      "durationSeconds": 10,
+      "totalSamples": 2500,
+      "signalHash": "1cf7dc73d4410938b302b442b0c0212646c8ea2552968435219a7099e3144fbf",
+      "rrIntervalMs": 769,
+      "leadOffDetected": false
+    },
+    "previewSamples": [
+      {
+        "tMs": 0,
+        "mv": 0.00143
+      },
+      {
+        "tMs": 4,
+        "mv": -0.00895
+      },
+      {
+        "tMs": 8,
+        "mv": -0.00939
+      },
+      {
+        "tMs": 12,
+        "mv": 0.00789
+      },
+      {
+        "tMs": 16,
+        "mv": 0
+      },
+      {
+        "tMs": 20,
+        "mv": 0.0065
+      },
+      {
+        "tMs": 24,
+        "mv": -0.00666
+      },
+      {
+        "tMs": 28,
+        "mv": -0.00825
+      },
+      {
+        "tMs": 32,
+        "mv": -0.0021
+      },
+      {
+        "tMs": 36,
+        "mv": 0.00409
+      },
+      {
+        "tMs": 40,
+        "mv": 0.0038
+      },
+      {
+        "tMs": 44,
+        "mv": 0.00011
+      },
+      {
+        "tMs": 48,
+        "mv": 0.00292
+      },
+      {
+        "tMs": 52,
+        "mv": -0.00428
+      },
+      {
+        "tMs": 56,
+        "mv": 0.0074
+      },
+      {
+        "tMs": 60,
+        "mv": -0.00598
+      },
+      {
+        "tMs": 64,
+        "mv": 0.00072
+      },
+      {
+        "tMs": 68,
+        "mv": 0.01178
+      },
+      {
+        "tMs": 72,
+        "mv": -0.00503
+      },
+      {
+        "tMs": 76,
+        "mv": 0.00114
+      },
+      {
+        "tMs": 80,
+        "mv": 0.01229
+      },
+      {
+        "tMs": 84,
+        "mv": 0.00909
+      },
+      {
+        "tMs": 88,
+        "mv": 0.01558
+      },
+      {
+        "tMs": 92,
+        "mv": 0.00582
+      },
+      {
+        "tMs": 96,
+        "mv": 0.01767
+      },
+      {
+        "tMs": 100,
+        "mv": 0.02988
+      },
+      {
+        "tMs": 104,
+        "mv": 0.03052
+      },
+      {
+        "tMs": 108,
+        "mv": 0.0402
+      },
+      {
+        "tMs": 112,
+        "mv": 0.05352
+      },
+      {
+        "tMs": 116,
+        "mv": 0.05949
+      },
+      {
+        "tMs": 120,
+        "mv": 0.08117
+      },
+      {
+        "tMs": 124,
+        "mv": 0.09061
+      },
+      {
+        "tMs": 128,
+        "mv": 0.10152
+      },
+      {
+        "tMs": 132,
+        "mv": 0.12459
+      },
+      {
+        "tMs": 136,
+        "mv": 0.13171
+      },
+      {
+        "tMs": 140,
+        "mv": 0.13666
+      },
+      {
+        "tMs": 144,
+        "mv": 0.11988
+      },
+      {
+        "tMs": 148,
+        "mv": 0.11226
+      },
+      {
+        "tMs": 152,
+        "mv": 0.0971
+      },
+      {
+        "tMs": 156,
+        "mv": 0.09571
+      },
+      {
+        "tMs": 160,
+        "mv": 0.07368
+      },
+      {
+        "tMs": 164,
+        "mv": 0.0622
+      },
+      {
+        "tMs": 168,
+        "mv": 0.04538
+      },
+      {
+        "tMs": 172,
+        "mv": 0.04333
+      },
+      {
+        "tMs": 176,
+        "mv": 0.03816
+      },
+      {
+        "tMs": 180,
+        "mv": 0.01518
+      },
+      {
+        "tMs": 184,
+        "mv": 0.01066
+      },
+      {
+        "tMs": 188,
+        "mv": 0.02012
+      },
+      {
+        "tMs": 192,
+        "mv": 0.00916
+      },
+      {
+        "tMs": 196,
+        "mv": 0.01191
+      },
+      {
+        "tMs": 200,
+        "mv": 0.01914
+      },
+      {
+        "tMs": 204,
+        "mv": 0.01514
+      },
+      {
+        "tMs": 208,
+        "mv": 0.00445
+      },
+      {
+        "tMs": 212,
+        "mv": 0.00493
+      },
+      {
+        "tMs": 216,
+        "mv": 0.02196
+      },
+      {
+        "tMs": 220,
+        "mv": 0.00774
+      },
+      {
+        "tMs": 224,
+        "mv": 0.02052
+      },
+      {
+        "tMs": 228,
+        "mv": 0.01652
+      },
+      {
+        "tMs": 232,
+        "mv": 0.00455
+      },
+      {
+        "tMs": 236,
+        "mv": 0.01555
+      },
+      {
+        "tMs": 240,
+        "mv": 0.02151
+      },
+      {
+        "tMs": 244,
+        "mv": 0.0164
+      },
+      {
+        "tMs": 248,
+        "mv": 0.01666
+      },
+      {
+        "tMs": 252,
+        "mv": 0.01932
+      },
+      {
+        "tMs": 256,
+        "mv": 0.02373
+      },
+      {
+        "tMs": 260,
+        "mv": 0.02066
+      },
+      {
+        "tMs": 264,
+        "mv": 0.00807
+      },
+      {
+        "tMs": 268,
+        "mv": 0.01223
+      },
+      {
+        "tMs": 272,
+        "mv": 0.00697
+      },
+      {
+        "tMs": 276,
+        "mv": -0.00275
+      },
+      {
+        "tMs": 280,
+        "mv": -0.01804
+      },
+      {
+        "tMs": 284,
+        "mv": -0.05657
+      },
+      {
+        "tMs": 288,
+        "mv": -0.09879
+      },
+      {
+        "tMs": 292,
+        "mv": -0.08671
+      },
+      {
+        "tMs": 296,
+        "mv": 0.06348
+      },
+      {
+        "tMs": 300,
+        "mv": 0.44248
+      },
+      {
+        "tMs": 304,
+        "mv": 0.92704
+      },
+      {
+        "tMs": 308,
+        "mv": 1.13991
+      },
+      {
+        "tMs": 312,
+        "mv": 0.87999
+      },
+      {
+        "tMs": 316,
+        "mv": 0.40898
+      }
+    ]
+  },
+  "verification": {
+    "deviceId": "ecg-esp32-1778515915124",
+    "status": "active",
+    "verified": true,
+    "hasNFTIdentity": true,
+    "lastOperation": "telemetry"
+  },
+  "deviceStatus": {
+    "deviceId": "ecg-esp32-1778515915124",
+    "status": "active",
+    "isActive": true,
+    "lastModified": "2026-05-11T16:11:55.000Z",
+    "ledgerProof": {
+      "lastOperation": "telemetry",
+      "registrationBlockNumber": "6",
+      "registrationTimestamp": null,
+      "registrationTxId": "1dc4531a3c02b7442cb779110567f7849b50e026f14826d31e5488f07535272f",
+      "nftMintTxId": "6755300710741874e6d072afb06417439bed746673d127f0b27fc95f79f77969",
+      "nftMintTimestamp": null,
+      "nftMintBlockNumber": "7",
+      "lastTelemetryTxId": "a0d44573c9686779dadaac285e681b6a32bfdcdaa75ac0d0d032571a9ef99a01",
+      "lastTelemetryBlockNumber": "9",
+      "lastTelemetryTimestamp": null
+    },
+    "revocation": null
+  }
+}

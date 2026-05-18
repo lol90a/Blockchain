@@ -2,6 +2,17 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { apiUrl } from './config/api';
 
+function DataField({ label, value, long = false }) {
+  return (
+    <div className={`nft-data-field${long ? ' nft-data-field-long' : ''}`}>
+      <span className="nft-data-label">{label}</span>
+      <strong className={long ? 'nft-data-value nft-data-value-code' : 'nft-data-value'}>
+        {value || 'Not recorded yet'}
+      </strong>
+    </div>
+  );
+}
+
 export default function NFTDisplay({ deviceId, nftIdentity, showMissingMessage }) {
   const [verificationResult, setVerificationResult] = useState(null);
   const [verificationDetails, setVerificationDetails] = useState(null);
@@ -104,28 +115,30 @@ export default function NFTDisplay({ deviceId, nftIdentity, showMissingMessage }
 
       <div style={{ marginTop: '20px' }}>
         <h4>Blockchain Data</h4>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '10px' }}>
-          <div><strong>Token ID:</strong> {nftIdentity.blockchainData.tokenId}</div>
-          <div><strong>Asset Type:</strong> {nftIdentity.blockchainData.assetType || 'deviceNFT'}</div>
-          <div><strong>Asset Key:</strong> {nftIdentity.blockchainData.assetKey || 'Not recorded yet'}</div>
-          <div><strong>Owner:</strong> {nftIdentity.blockchainData.ownerId || 'Not recorded yet'}</div>
-          <div><strong>Block Number:</strong> {nftIdentity.blockchainData.blockNumber || 'Not recorded yet'}</div>
-          <div><strong>Transaction Hash:</strong> {nftIdentity.blockchainData.transactionHash || 'Not recorded yet'}</div>
-          <div><strong>Network:</strong> {nftIdentity.blockchainData.network || 'Hyperledger Fabric'}</div>
-          <div><strong>Commit Status:</strong> {nftIdentity.blockchainData.status || 'Unknown'}</div>
+        <div className="nft-data-grid">
+          <DataField label="Asset Type" value={nftIdentity.blockchainData.assetType || 'deviceNFT'} />
+          <DataField label="Owner" value={nftIdentity.blockchainData.ownerId} />
+          <DataField label="Block Number" value={nftIdentity.blockchainData.blockNumber} />
+          <DataField label="Network" value={nftIdentity.blockchainData.network || 'Hyperledger Fabric'} />
+          <DataField label="Commit Status" value={nftIdentity.blockchainData.status || 'Unknown'} />
+          <DataField label="Token ID" value={nftIdentity.blockchainData.tokenId} long />
+          <DataField label="Asset Key" value={nftIdentity.blockchainData.assetKey} long />
+          <DataField label="Transaction Hash" value={nftIdentity.blockchainData.transactionHash} long />
         </div>
       </div>
 
       {verificationDetails?.nftAsset && (
         <div style={{ marginTop: '20px' }}>
           <h4>Minted Fabric NFT Asset</h4>
-          <div style={{ background: '#f8f9fa', padding: '10px', borderRadius: '4px', fontSize: '12px', wordBreak: 'break-all' }}>
-            <div><strong>Asset Type:</strong> {verificationDetails.nftAsset.assetType}</div>
-            <div><strong>Token ID:</strong> {verificationDetails.nftAsset.tokenId}</div>
-            <div><strong>Owner:</strong> {verificationDetails.nftAsset.ownerId}</div>
-            <div><strong>Minted At:</strong> {verificationDetails.nftAsset.mintedAt}</div>
-            <div><strong>Mint Tx:</strong> {verificationDetails.nftAsset.mintTxId}</div>
-            <div><strong>Status:</strong> {verificationDetails.nftAsset.status}</div>
+          <div className="nft-asset-panel">
+            <div className="nft-data-grid">
+              <DataField label="Asset Type" value={verificationDetails.nftAsset.assetType} />
+              <DataField label="Owner" value={verificationDetails.nftAsset.ownerId} />
+              <DataField label="Minted At" value={verificationDetails.nftAsset.mintedAt} />
+              <DataField label="Status" value={verificationDetails.nftAsset.status} />
+              <DataField label="Token ID" value={verificationDetails.nftAsset.tokenId} long />
+              <DataField label="Mint Tx" value={verificationDetails.nftAsset.mintTxId} long />
+            </div>
           </div>
         </div>
       )}

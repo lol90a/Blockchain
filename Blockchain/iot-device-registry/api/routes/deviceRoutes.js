@@ -13,6 +13,7 @@ router.get('/type/:type', deviceController.getDevicesByType);
 // Device status management
 router.post('/:deviceId/activate', deviceController.activateDevice);
 router.post('/:deviceId/deactivate', deviceController.deactivateDevice);
+router.post('/:deviceId/telemetry', deviceController.recordTelemetryEvent);
 router.post('/:deviceId/challenge', deviceController.createDeviceChallenge);
 router.post('/:deviceId/prove', deviceController.proveDeviceIdentity);
 router.post('/:deviceId/signature/verify', deviceController.verifyDeviceSignature);

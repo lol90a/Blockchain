@@ -34,6 +34,12 @@ function mergeLedgerProof(device, txDetails, operation) {
     ledgerProof.lastUpdateTimestamp = txDetails.timestamp;
   }
 
+  if (operation === 'telemetry') {
+    ledgerProof.lastTelemetryTxId = txDetails.transactionId;
+    ledgerProof.lastTelemetryBlockNumber = txDetails.blockNumber;
+    ledgerProof.lastTelemetryTimestamp = txDetails.timestamp;
+  }
+
   if (operation === 'mint-nft') {
     ledgerProof.nftMintTxId = txDetails.transactionId;
     ledgerProof.nftMintBlockNumber = txDetails.blockNumber;
@@ -188,6 +194,22 @@ exports.updateDevice = async (deviceId, type, manufacturer, publicKey, model) =>
   const txDetails = await submitTransactionWithDetails(contract, network, 'updateDevice', [deviceId, type || '', manufacturer || '', publicKey || '', model || '']);
   const device = JSON.parse(txDetails.payload);
   const ledgerProof = mergeLedgerProof(device, txDetails, 'update');
+  await persistLedgerProof(contract, deviceId, ledgerProof, device.nftIdentity || null);
+  const persisted = await getPersistedDevice(contract, deviceId);
+  await gateway.disconnect();
+  return persisted;
+};
+
+exports.recordTelemetryEvent = async (deviceId, telemetry, submittedBy = 'hospital-edge-gateway') => {
+  const { contract, gateway, network } = await connectFabric();
+  const txDetails = await submitTransactionWithDetails(
+    contract,
+    network,
+    'recordDeviceTelemetry',
+    [deviceId, JSON.stringify(telemetry || {}), submittedBy || '']
+  );
+  const device = JSON.parse(txDetails.payload);
+  const ledgerProof = mergeLedgerProof(device, txDetails, 'telemetry');
   await persistLedgerProof(contract, deviceId, ledgerProof, device.nftIdentity || null);
   const persisted = await getPersistedDevice(contract, deviceId);
   await gateway.disconnect();

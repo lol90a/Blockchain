@@ -149,6 +149,23 @@ exports.updateDevice = async (req, res) => {
   }
 };
 
+exports.recordTelemetryEvent = async (req, res) => {
+  try {
+    const { submittedBy, ...telemetry } = req.body || {};
+    const result = await deviceService.recordTelemetryEvent(
+      req.params.deviceId,
+      telemetry,
+      submittedBy || 'esp32-ad8232-edge-simulator'
+    );
+    res.status(200).json({
+      message: 'Telemetry event logged successfully on Hyperledger Fabric',
+      data: JSON.parse(result)
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 exports.getDevicesByStatus = async (req, res) => {
   try {
     const devices = await deviceService.getDevicesByStatus(req.params.status);

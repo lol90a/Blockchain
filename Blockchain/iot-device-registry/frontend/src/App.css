@@ -234,6 +234,55 @@
   color: #2f261d;
 }
 
+.nft-data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.nft-data-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 14px;
+  border: 1px solid #e2d6c2;
+  border-radius: 12px;
+  background: rgba(255, 252, 247, 0.92);
+  min-width: 0;
+}
+
+.nft-data-field-long {
+  grid-column: 1 / -1;
+}
+
+.nft-data-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #6c5738;
+  text-transform: uppercase;
+}
+
+.nft-data-value {
+  color: #2a2118;
+  font-size: 1rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.nft-data-value-code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.92rem;
+}
+
+.nft-asset-panel {
+  background: #f8f9fa;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #e2d6c2;
+}
+
 .dashboard-report {
   background: #f8f4ec;
   border: 1px solid #b8ab96;
